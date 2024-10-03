@@ -22,6 +22,11 @@ public class OmniDrive {
         rightFrontDrive = hardwareMap.get(DcMotor.class, "right_front_drive");
         rightBackDrive = hardwareMap.get(DcMotor.class, "right_back_drive");
 
+        leftFrontDrive.setDirection(DcMotor.Direction.REVERSE);
+        leftBackDrive.setDirection(DcMotor.Direction.REVERSE);
+        rightFrontDrive.setDirection(DcMotor.Direction.FORWARD);
+        rightBackDrive.setDirection(DcMotor.Direction.FORWARD);
+
     }
 
     public void init( HardwareMap hardwareMap) {
@@ -38,8 +43,8 @@ public class OmniDrive {
         double max;
 
         // POV Mode: left joystick for forward/strafe, right joystick for rotation
-        double axial   = -gamepad1.left_stick_y;
-        double lateral = gamepad1.left_stick_x;
+        double axial   = -gamepad1.left_stick_x;
+        double lateral = gamepad1.left_stick_y;
         double yaw     = gamepad1.right_stick_x;
 
         // Calculate motor power for each wheel
