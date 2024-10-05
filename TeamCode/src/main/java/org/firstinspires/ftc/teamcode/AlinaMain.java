@@ -1,15 +1,22 @@
 package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
+import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.util.ElapsedTime;
+
+import org.firstinspires.ftc.teamcode.functions.OmniDrive;
 
 @com.qualcomm.robotcore.eventloop.opmode.TeleOp(name = "AlinaMain")
 public class AlinaMain extends LinearOpMode {
 
-    private ElapsedTime runtime;
-    public AlinaMain() {
-        runtime = new ElapsedTime();
-    }
+    //these variables are so real
+    public ElapsedTime runtime = new ElapsedTime();
+
+    public DcMotor leftFrontDrive;
+    public DcMotor leftBackDrive;
+    public DcMotor rightFrontDrive;
+    public DcMotor rightBackDrive;
+
 
     @Override
     public void runOpMode() {
@@ -21,6 +28,7 @@ public class AlinaMain extends LinearOpMode {
         telemetry.update();
         waitForStart();
         runtime.reset();
+
         // Run until the end of the match (driver presses STOP)
         while (opModeIsActive()) {
             // Call the omniFunction method and pass in the gamepad and telemetry
