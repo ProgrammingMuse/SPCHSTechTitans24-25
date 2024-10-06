@@ -3,13 +3,14 @@ package org.firstinspires.ftc.teamcode;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.util.ElapsedTime;
+import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
 import org.firstinspires.ftc.teamcode.functions.OmniDrive;
 
-@com.qualcomm.robotcore.eventloop.opmode.TeleOp(name = "AlinaMain")
+@TeleOp(name="AlinaMain", group="Linear OpMode")
 public class AlinaMain extends LinearOpMode {
 
-    //these variables are so real
+    //these variables are so real just in case
     public ElapsedTime runtime = new ElapsedTime();
 
     public DcMotor leftFrontDrive;

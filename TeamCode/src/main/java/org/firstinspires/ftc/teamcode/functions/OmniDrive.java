@@ -11,10 +11,10 @@ import org.firstinspires.ftc.robotcore.external.Telemetry;
 public class OmniDrive {
 
 
-    private DcMotor leftFrontDrive = null;
-    private DcMotor leftBackDrive = null;
-    private DcMotor rightFrontDrive = null;
-    private DcMotor rightBackDrive = null;
+    private DcMotor leftFrontDrive;
+    private DcMotor leftBackDrive;
+    private DcMotor rightFrontDrive;
+    private DcMotor rightBackDrive;
 
     public OmniDrive(HardwareMap hardwareMap) {
         leftFrontDrive = hardwareMap.get(DcMotor.class, "left_front_drive");
@@ -38,7 +38,6 @@ public class OmniDrive {
     }
 
     // Method to control the robot using omnidirectional drive
-    @SuppressLint("NotConstructor")
     public void OmniUpdate(Gamepad gamepad1, Telemetry telemetry) {
         double max;
 
