@@ -42,8 +42,8 @@ public class OmniDrive {
         double max;
 
         // POV Mode: left joystick for forward/strafe, right joystick for rotation
-        double axial   = -gamepad1.left_stick_x;
-        double lateral = gamepad1.left_stick_y;
+        double axial   = -gamepad1.left_stick_y;
+        double lateral = gamepad1.left_stick_x;
         double yaw     = gamepad1.right_stick_x;
 
         // Calculate motor power for each wheel

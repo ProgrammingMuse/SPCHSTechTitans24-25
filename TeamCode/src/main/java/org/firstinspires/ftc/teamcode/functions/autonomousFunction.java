@@ -8,4 +8,5 @@ public class autonomousFunction {
     public DcMotor rightFrontDrive;
     public DcMotor rightBackDrive;
     public DcMotor slider;
+    public DcMotor hook;
 }
