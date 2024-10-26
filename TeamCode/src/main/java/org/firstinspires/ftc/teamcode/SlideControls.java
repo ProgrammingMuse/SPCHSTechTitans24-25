@@ -10,9 +10,9 @@ import org.firstinspires.ftc.robotcore.external.Telemetry;
 public class SlideControls{
 
     public ElapsedTime runtime = new ElapsedTime();
-    public DcMotor slideMotor = null;
-    public DcMotor armMotor = null;
-    public TouchSensor slideSafety = null;
+    public DcMotor slideMotor;
+    public DcMotor armMotor;
+    public TouchSensor slideSafety;
 
     //DriveTrain Motors
     // Initialize the hardware variables. Note that the strings used here must correspond

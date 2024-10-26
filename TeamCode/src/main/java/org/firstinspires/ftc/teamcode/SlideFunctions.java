@@ -12,19 +12,27 @@ public class SlideFunctions {
         double slidePowerConst = 0.7;
         double slidePower = -gamepad2.left_stick_y;
 
-        if (!slideSafety.isPressed() || slidePower > 0){
-            slideMotor.setPower(slidePower * slidePowerConst);
+        if (!slideSafety.isPressed() && slidePower > 0){
+            slidePower=0;
         }
 
+        slideMotor.setPower(slidePower * slidePowerConst);
+
+        int slidePosition= slideMotor.getCurrentPosition();
 
         telemetry.addData("Slide power","%4.2f", slidePower);
+        telemetry.addData("Slide Position", slidePosition);
+
     }
 
     public void ArmPosition(Gamepad gamepad1, Gamepad gamepad2, DcMotor armMotor, TouchSensor slideSafety, Telemetry telemetry) {
         double armPower = gamepad2.right_stick_y;
         armMotor.setPower(armPower);
 
+        int armPosition = armMotor.getCurrentPosition();
+
         telemetry.addData("Arm power","%4.2f", armPower);
+        telemetry.addData("Arm Position", armPosition);
     }
 
     public void SlidePosition(Gamepad gamepad1, Gamepad gamepad2, DcMotor armMotor, Telemetry telemetry) {
