@@ -28,7 +28,7 @@ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
 CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. */
-/*
+
 package org.firstinspires.ftc.robotcontroller.internal;
 
 import android.app.ActionBar;
@@ -248,7 +248,6 @@ public class FtcRobotControllerActivity extends Activity
    * FtcRobotControllerActivity, instead of the launch activity.  Detect when that happens, and throw
    * the device back to the permission validator activity.
    */
-/*
   protected boolean enforcePermissionValidator() {
     if (!permissionsValidated) {
       RobotLog.vv(TAG, "Redirecting to permission validator");
@@ -351,7 +350,6 @@ public class FtcRobotControllerActivity extends Activity
      * the onCreate() call for the activity and then we crash here because we don't
      * have permissions. So...
      */
-/*
     if (permissionsValidated) {
       ClassManager.getInstance().setOnBotJavaClassHelper(onBotJavaHelper);
       ClassManagerFactory.registerFilters();
@@ -630,7 +628,6 @@ public class FtcRobotControllerActivity extends Activity
    * Updates the orientation of monitorContainer (which contains cameraMonitorView)
    * based on the given configuration. Makes the children split the space.
    */
-/*
   private void updateMonitorLayout(Configuration configuration) {
     LinearLayout monitorContainer = (LinearLayout) findViewById(R.id.monitorContainer);
     if (configuration.orientation == Configuration.ORIENTATION_LANDSCAPE) {
@@ -638,14 +635,14 @@ public class FtcRobotControllerActivity extends Activity
       monitorContainer.setOrientation(LinearLayout.HORIZONTAL);
       for (int i = 0; i < monitorContainer.getChildCount(); i++) {
         View view = monitorContainer.getChildAt(i);
-        view.setLayoutParams(new LayoutParams(0, LayoutParams.MATCH_PARENT, 1 /* weight *//*));
+        view.setLayoutParams(new LayoutParams(0, LayoutParams.MATCH_PARENT, 1 /* weight */));
       }
     } else {
       // When the phone is portrait, lay out the monitor views vertically.
       monitorContainer.setOrientation(LinearLayout.VERTICAL);
       for (int i = 0; i < monitorContainer.getChildCount(); i++) {
         View view = monitorContainer.getChildAt(i);
-        view.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, 0, 1 /* weight *//*);
+        view.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, 0, 1 /* weight */));
       }
     }
     monitorContainer.requestLayout();
@@ -772,8 +769,7 @@ public class FtcRobotControllerActivity extends Activity
   private void checkPreferredChannel() {
     // For P2P network, check to see what preferred channel is.
     if (networkType ==  NetworkType.WIFIDIRECT) {
-      //int prefChannel = preferencesHelper.readInt(getString(com.qualcomm.ftccommon.R.string.pref_wifip2p_channel), -1);
-      int prefChannel = 1; //River did fucky shit that is bad practice, hope this doesn't break shit
+      int prefChannel = preferencesHelper.readInt(getString(com.qualcomm.ftccommon.R.string.pref_wifip2p_channel), -1);
       if (prefChannel == -1) {
         prefChannel = 0;
         RobotLog.vv(TAG, "pref_wifip2p_channel: No preferred channel defined. Will use a default value of %d", prefChannel);
@@ -847,4 +843,3 @@ public class FtcRobotControllerActivity extends Activity
     }
   }
 }
-*/
